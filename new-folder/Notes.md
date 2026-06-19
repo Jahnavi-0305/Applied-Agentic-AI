@@ -321,7 +321,7 @@ Taking Actions
 ```
 
 
-Yes, exactly! That's literally it. 😄
+ASYNCHRONOUS OPERATIONS: 
 
 The whole concept boils down to **3 keywords**:
 
@@ -352,4 +352,4 @@ def fetch_email():
 async def fetch_email():
 ```
 
-That's genuinely it. One word changes everything. 🎯
+That's genuinely it. One word changes everything.
