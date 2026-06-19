@@ -103,3 +103,9 @@ If most answers are **NO** → use something simpler.
 > **Don't use a sledgehammer to crack a nut. Use the simplest tool that solves the problem.**
 
 Plain code → Workflow → RAG → Agent. Each level is more powerful but also more expensive and harder to maintain. Pick the right level for your problem. That's the whole point. 
+
+
+IMP UI POINT;
+
+An autonomy slider is a design pattern that lets users control how much they trust an AI agent by choosing between three modes. In **Manual mode**, the human does everything and the agent stays silent. In **Ask mode**, the agent suggests actions but the human must approve each one before anything happens — like GitHub Copilot suggesting code that you accept by pressing Tab. In **Agent mode**, the agent acts on its own and only notifies the human afterward — like an AI that automatically fixes bugs without asking. The key insight is that users should never be forced into full autonomy from day one. Trust is built gradually — users start in Ask mode, see that the agent makes good decisions, and then choose to give it more control over time. Without this slider, an agent either feels useless because it does nothing, or feels scary because it does too much without permission.
+
