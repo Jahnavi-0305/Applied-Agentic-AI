@@ -1,5 +1,3 @@
-Let me break the whole thing down into super simple language, section by section.
-
 ***
 
 ## Section 1: When to Just Use Plain Code (No AI at All)
@@ -104,4 +102,4 @@ If most answers are **NO** → use something simpler.
 
 > **Don't use a sledgehammer to crack a nut. Use the simplest tool that solves the problem.**
 
-Plain code → Workflow → RAG → Agent. Each level is more powerful but also more expensive and harder to maintain. Pick the right level for your problem. That's the whole point. 🎯
+Plain code → Workflow → RAG → Agent. Each level is more powerful but also more expensive and harder to maintain. Pick the right level for your problem. That's the whole point. 
