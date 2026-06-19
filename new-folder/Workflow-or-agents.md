@@ -107,7 +107,18 @@ Plain code → Workflow → RAG → Agent. Each level is more powerful but also 
 
 
 
-**IMP UI POINT:**
+## IMP UI POINTS:
 
-An autonomy slider is a design pattern that lets users control how much they trust an AI agent by choosing between three modes. In **Manual mode**, the human does everything and the agent stays silent. In **Ask mode**, the agent suggests actions but the human must approve each one before anything happens — like GitHub Copilot suggesting code that you accept by pressing Tab. In **Agent mode**, the agent acts on its own and only notifies the human afterward — like an AI that automatically fixes bugs without asking. The key insight is that users should never be forced into full autonomy from day one. Trust is built gradually — users start in Ask mode, see that the agent makes good decisions, and then choose to give it more control over time. Without this slider, an agent either feels useless because it does nothing, or feels scary because it does too much without permission.
+An **autonomy slider** is a design pattern that lets users control how much they trust an AI agent by choosing between three modes. In **Manual mode**, the human does everything and the agent stays silent. In **Ask mode**, the agent suggests actions but the human must approve each one before anything happens — like GitHub Copilot suggesting code that you accept by pressing Tab. In **Agent mode**, the agent acts on its own and only notifies the human afterward — like an AI that automatically fixes bugs without asking. The key insight is that users should never be forced into full autonomy from day one. Trust is built gradually — users start in Ask mode, see that the agent makes good decisions, and then choose to give it more control over time. Without this slider, an agent either feels useless because it does nothing, or feels scary because it does too much without permission.
+
+
+
+When building an AI agent, users often don't know what the agent can do — unlike a normal app where buttons and menus make everything visible. Your job as a designer and engineer is to make the agent's capabilities obvious without overwhelming the user. You do this in simple ways: add suggested action buttons below the chat input (like "Track Order" or "Generate Summary"), show a capability menu or sidebar listing what the agent can do, and use dynamic suggestions that appear as the user types (like how Google autocompletes your search). When a user asks for something the agent can't do, don't just say "I can't do that" — instead say "I can't process payments, but I can update your billing preferences" — always offer an alternative. Most importantly, don't dump every feature on the user at once. Use progressive disclosure — show the basics first, reveal advanced features only as the user gets comfortable. The whole goal is simple: turn the agent from a confusing black box into something that feels like a helpful, transparent assistant that guides you rather than confuses you.
+
+
+**FAILING GRAFULLY:**
+
+Every AI agent will fail at some point — that's guaranteed. What matters is how it fails. A well-designed agent never just crashes or returns a confusing error. Instead it does four things: acknowledge the failure honestly ("I couldn't find what you're looking for"), explain briefly why it failed, offer a next step ("Would you like me to escalate to a human?"), and use empathetic language that feels human, not robotic. In multi-step tasks, the agent should save progress so the user doesn't have to start over from scratch — this is directly connected to LangGraph's checkpointing feature you already learned. If the agent repeatedly fails to understand voice input, it should switch modalities — offer text instead. Most importantly, every failure should be logged so engineers can analyze patterns and fix recurring issues over time. The goal is simple: even when the agent fails, the user should still feel helped, not abandoned.
+
+
 
