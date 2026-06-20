@@ -299,3 +299,67 @@ Good docstring = LLM always calls it at the right time.
 
 
 This pattern forms the foundation for building LangChain agents and tool-using AI applications.
+
+
+#API TOOLS:
+
+No, you don't need to memorize the exact code. But you need to understand the **pattern** — because every API-based tool follows the same structure.
+
+***
+
+## The Pattern (This is What You Remember)
+
+```python
+import requests
+from langchain_core.tools import tool
+
+@tool
+def get_weather(city: str) -> str:
+    """Gets current weather for a given city."""
+    response = requests.get(
+        "https://api.weather.com/current",   # ← external API
+        params={"city": city, "key": API_KEY}
+    )
+    return response.json()["description"]
+```
+
+That's it. Every single API-based tool looks like this:
+1. `@tool` on top
+2. Good docstring
+3. `requests.get()` or `requests.post()` inside
+4. Return the result
+
+***
+
+## Local Tool vs API Tool — The Only Difference
+
+```python
+# LOCAL TOOL — runs on your machine
+@tool
+def add_numbers(x: int, y: int) -> int:
+    """Adds two numbers."""
+    return x + y          # ← pure Python, no internet
+
+# API TOOL — calls external service
+@tool
+def get_weather(city: str) -> str:
+    """Gets weather for a city."""
+    response = requests.get("https://weather-api.com", ...)  # ← internet call
+    return response.json()
+```
+
+**Same `@tool` decorator. Same docstring pattern. Only difference = internet call inside.**
+
+***
+
+## What to Remember for Interviews
+
+If asked *"how do you build an API-based tool for an agent?"* say:
+
+> *"Same as a local tool — use `@tool` decorator with a clear docstring. Inside the function, make a `requests.get()` or `requests.post()` call to the external API, parse the response, and return a clean string result back to the LLM."*
+
+***
+
+
+> **API tools = local tools + a `requests` call inside. Same pattern, just reaches out to the internet.** 🎯
+
