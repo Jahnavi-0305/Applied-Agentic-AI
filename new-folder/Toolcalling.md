@@ -269,4 +269,33 @@ print(final_response.content)
 - Return results using `ToolMessage`.
 - Invoke the model again to generate the final natural-language response.
 
+# WHAT TO REMEMBER ABOUT LOCAL TOOLS
+
+Just 3 things:
+
+***
+
+## What to Remember About Local Tools
+
+**1. What they are:**
+Functions YOU write with `@tool` that run on your own machine. No internet needed.
+
+**2. When to use them:**
+When the LLM is bad at something — math, dates, time zones, calendar math. Use a local tool instead of trusting the LLM to calculate.
+
+**3. The docstring is everything:**
+```python
+@tool
+def add_numbers(x: int, y: int) -> int:
+    """Adds two integers. Use when user wants to add numbers."""
+    return x + y
+```
+Bad docstring = LLM calls wrong tool or never calls it.
+Good docstring = LLM always calls it at the right time.
+
+***
+
+
+
+
 This pattern forms the foundation for building LangChain agents and tool-using AI applications.
