@@ -2,11 +2,11 @@
 
 This example demonstrates how to:
 
-1. Define custom tools using `@tool`
-2. Bind tools to an LLM
-3. Let the LLM choose the appropriate tool
-4. Execute the selected tool
-5. Return the tool result back to the LLM for a final answer
+1. Define custom tools using `@tool` ( Any function you write yourself with @tool = local tool.)
+3. Bind tools to an LLM
+4. Let the LLM choose the appropriate tool
+5. Execute the selected tool
+6. Return the tool result back to the LLM for a final answer
 
 ---
 
