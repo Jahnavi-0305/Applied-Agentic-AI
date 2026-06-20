@@ -2,7 +2,7 @@
 
 This example demonstrates how to:
 
-1. Define custom tools using `@tool` ( Any function you write yourself with @tool = local tool.)
+1. Define custom tools using `@tool` (Any function you write yourself with @tool = local tool.)
 3. Bind tools to an LLM
 4. Let the LLM choose the appropriate tool
 5. Execute the selected tool
