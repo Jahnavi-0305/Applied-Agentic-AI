@@ -402,7 +402,7 @@ If asked *"how do you build an API-based tool for an agent?"* say:
 
 ***
 
-## Security Gaps — Worth Mentioning in Interviews 🏆
+## Security Gaps — Worth Mentioning in Interviews 
 
 MCP is still maturing. Key unsolved problems:
 
@@ -452,7 +452,7 @@ Only these two things change:
 - The **server names** (math, weather → orders, inventory, payments...)
 - The **routing logic** (how the agent decides which tool to call)
 
-The MCP pattern itself **never changes**. 🎯
+The MCP pattern itself **never changes**. 
 
 ***
 
