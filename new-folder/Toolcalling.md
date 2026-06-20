@@ -361,5 +361,46 @@ If asked *"how do you build an API-based tool for an agent?"* say:
 ***
 
 
-> **API tools = local tools + a `requests` call inside. Same pattern, just reaches out to the internet.** 🎯
+> **API tools = local tools + a `requests` call inside. Same pattern, just reaches out to the internet.**
 
+# MCP:
+
+Model Context Protocol (MCP)
+What MCP Actually Is
+One sentence: MCP is a universal plug-and-play standard so any AI agent can connect to any data source/tool without writing custom code for each one.
+
+💡 Best interview analogy: MCP is the USB-C port for AI — one port, works with everything.
+
+The 2 Core Roles
+Role	What It Is	Simple Analogy
+MCP Server	Wraps a data source (database, CRM, storage) and exposes methods via JSON-RPC	A waiter who knows the menu
+MCP Client	The agent that sends requests and receives responses	The customer ordering food
+The client doesn't need to know how the server works internally — just what methods it exposes.
+
+What to Remember Technically
+JSON-RPC 2.0 over HTTPS or WebSocket — this is the "language" both sides speak
+
+Servers advertise their method catalog (list of available functions + their input/output shapes)
+
+The agent reads the catalog and reasons about which method to call and with what parameters — automatically
+
+Why It Matters
+Before MCP	After MCP
+Integration	Write a custom adapter for every single data source	Build one MCP server per data source
+Reusability	Brittle, hard to maintain, doesn't scale	Any agent can use it instantly
+Security Gaps — Worth Mentioning in Interviews 🏆
+MCP is still maturing. Key unsolved problems:
+
+No standardized authentication solution built into the spec
+
+Role-based access control (who can call what) is still being figured out
+
+Risk of malicious payload injection when multiple agents share MCP endpoints
+
+Mentioning these in an interview shows senior-level thinking. 💡
+
+One-Paragraph Summary
+MCP = USB-C for AI. A server exposes tools via JSON-RPC 2.0. A client (agent) fetches the method catalog and calls what it needs. No custom adapters. Any agent, any tool, same protocol. Security is the current weak spot.
+
+Copy
+Copy
