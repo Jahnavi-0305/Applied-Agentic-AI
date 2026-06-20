@@ -417,3 +417,43 @@ MCP is still maturing. Key unsolved problems:
 ## One-Paragraph Summary
 
 > MCP = USB-C for AI. A **server** exposes tools via JSON-RPC 2.0. A **client** (agent) fetches the method catalog and calls what it needs. No custom adapters. Any agent, any tool, same protocol. **Security is the current weak spot.**
+
+# CODE
+
+Remember These 4 Things Only
+
+### 1. The Pattern (Always the same)
+```
+Create client → get_tools() → pick tool → arun()
+```
+Every MCP implementation follows this exact flow. Period.
+
+### 2. Two Transport Types
+| Transport | When used |
+|-----------|-----------|
+| `stdio` | Server runs **locally** as a subprocess |
+| `streamable_http` | Server runs **remotely** over HTTP |
+
+### 3. Multi-Server is Normal
+In real companies, one agent connects to **many servers** — databases, CRMs, internal APIs — all in one `MultiServerMCPClient({...})` dictionary. Each key is just a name you give the server.
+
+### 4. Always Async
+`get_tools()` and `arun()` are always **async/await** because they're network calls.
+Because Without async, if user 1, 2, 3 are calling an API. User 1 faces problem then User 2 and User 3 are stuck waiting for User 1's API call to finish, even though their requests have nothing to do with each other.
+
+With async, all 3 run at the same time. If User 1's weather API fails, only User 1 gets the error message. Users 2 and 3 get their responses normally — no one else is affected. 
+
+
+***
+
+## What Changes Company to Company
+
+Only these two things change:
+- The **server names** (math, weather → orders, inventory, payments...)
+- The **routing logic** (how the agent decides which tool to call)
+
+The MCP pattern itself **never changes**. 🎯
+
+***
+
+That's it. If you remember the 4-step pattern and two transports, you can work with any company's MCP setup on day one. 🚀
