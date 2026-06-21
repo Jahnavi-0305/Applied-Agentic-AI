@@ -85,3 +85,15 @@ Senior AI engineers know that **context quality is what
 separates good agents from great ones.**
 Even a weaker model performs well with great context.
 Even the best model fails with poor context.
+
+
+## Knowledge & Memory
+
+**Knowledge** = external facts pulled via RAG
+(docs, catalogs, logs)
+
+**Memory** = agent's own history
+(past messages, tool outputs, session state)
+
+> Memory is WHERE knowledge is stored.
+> Context Engineering is HOW it's used.
