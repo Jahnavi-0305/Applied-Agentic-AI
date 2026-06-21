@@ -97,3 +97,37 @@ Even the best model fails with poor context.
 
 > Memory is WHERE knowledge is stored.
 > Context Engineering is HOW it's used.
+
+# Context Window
+
+Context Window
+│
+├── Input (what goes IN to the model)
+│   ├── System prompt ("you are Perplexity...")
+│   ├── Your message 1
+│   ├── My reply 1
+│   ├── Your message 2
+│   ├── My reply 2
+│   └── ... entire conversation history
+│
+└── Output (what comes OUT)
+    └── My next reply
+
+**Context Window** = the whiteboard the LLM reads
+every time you call it. Contains everything:
+system prompt + history + current message.
+
+# Foundational Memory — Rolling Context Window
+
+**Rolling Context Window** = as conversation grows,
+keep only the MOST RECENT messages.
+Oldest messages get ejected automatically (FIFO).
+
+**Problem:** Important info from early in the
+conversation gets lost forever once ejected.
+
+**Pro tip:** Place the most important context
+**near the END of the prompt** — LLMs pay more
+attention to recent content.
+
+
