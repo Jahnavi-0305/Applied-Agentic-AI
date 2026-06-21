@@ -337,4 +337,116 @@ Every component (prompt, model, tool) is a **Runnable**
 ***
 
 
+Great — you understood the concept correctly! Here are your notes:
+
+***
+
+````markdown
+#### 4. Graphs (LangGraph)
+
+**What it is:**
+The most flexible pattern. Instead of linear steps (chain)
+or flat parallel calls, a graph lets you **branch, merge,
+and loop** based on conditions.
+
+**Simple Example:**
+User says: *"I have a billing problem."*
+
+```
+User message
+      ↓
+categorize_issue → "billing" or "technical"?
+      ↓                        ↓
+handle_invoice          handle_login
+      ↓                        ↓
+summarize_response ← ← ← ← ← ←
+      ↓
+Final answer to user
+```
+
+Different paths depending on the issue —
+all paths merge back into one final response.
+
+**Key Concepts to Remember:**
+- **Node** = one step / one tool call
+- **Edge** = connection between steps
+- **Conditional Edge** = "go to X if condition A,
+  go to Y if condition B"
+- **Consolidation Edge** = multiple branches merging
+  back into one node
+- **State** = a dictionary passed through every node,
+  updated at each step
+
+**Pros:**
+- ✅ Handles complex non-linear workflows
+- ✅ Branch + merge in any pattern
+- ✅ Very flexible
+
+**Cons:**
+- ❌ More LLM calls = higher cost + latency
+- ❌ Risk of cycles (infinite loops) and unreachable nodes
+- ❌ Harder to debug and maintain
+
+> ⚠️ Always set `max_depth` to prevent infinite loops
+
+---
+
+### When to Use Which Topology
+
+| Topology | Use When |
+|---|---|
+| **Single Tool** | One simple task, one tool needed |
+| **Parallel** | Multiple independent tools needed at once |
+| **Chain** | Steps must happen in order, each depends on previous |
+| **Graph** | Complex branching + merging required |
+
+> Start simple. Use a chain first.
+> Only use a graph when you MUST branch AND merge.
+
+---
+
+### Code Pattern to Remember (LangGraph)
+
+Only remember this skeleton — not the full code:
+
+```python
+from langgraph.graph import StateGraph, START, END
+
+graph = StateGraph()
+
+# Add nodes (each node = one function/tool)
+graph.add_edge(START, node_a)
+
+# Add conditional edges (branching)
+graph.add_conditional_edges(
+    node_a,
+    router_function,  # decides which path
+    mapping={"option1": node_b, "option2": node_c}
+)
+
+# Consolidation (merge branches back)
+graph.add_edge(node_b, final_node)
+graph.add_edge(node_c, final_node)
+
+graph.add_edge(final_node, END)
+
+# Run
+result = graph.run(initial_state, max_depth=5)
+```
+
+**That's all you need.** The pattern is always:
+`START → nodes → conditional edges → consolidate → END`
+````
+
+***
+
+Remember Just This:
+
+**Concept question:** *"What's the difference between chains and graphs?"*
+> *"Chains are linear — step A feeds into step B feeds into step C. Graphs allow branching and merging — you can split into multiple paths based on conditions and consolidate results back into one response. I use LangGraph for graphs, where nodes are tool calls and edges define transitions."*
+
+**Code question:** Only need to know `add_edge`, `add_conditional_edges`, `START`, `END`, and `max_depth`. Nothing else. 
+
+
+
 
