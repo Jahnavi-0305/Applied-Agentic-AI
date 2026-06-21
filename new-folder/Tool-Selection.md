@@ -251,7 +251,7 @@ Step 2 **cannot start** until Step 1 finishes. That's a chain.
 
 ## Runnable — Simple Explanation
 
-You asked what **Runnable** means in LangChain:
+what **Runnable** means in LangChain:
 
 Think of it like a **USB standard** 🔌
 
