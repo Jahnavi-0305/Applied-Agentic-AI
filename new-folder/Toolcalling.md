@@ -410,7 +410,7 @@ MCP is still maturing. Key unsolved problems:
 - **Role-based access control** (who can call what) is still being figured out
 - Risk of **malicious payload injection** when multiple agents share MCP endpoints
 
-> Mentioning these in an interview shows senior-level thinking. 💡
+> Mentioning these in an interview shows senior-level thinking. 
 
 ***
 
@@ -456,4 +456,4 @@ The MCP pattern itself **never changes**.
 
 ***
 
-That's it. If you remember the 4-step pattern and two transports, you can work with any company's MCP setup on day one. 🚀
+That's it. If you remember the 4-step pattern and two transports, you can work with any company's MCP setup on day one. 
