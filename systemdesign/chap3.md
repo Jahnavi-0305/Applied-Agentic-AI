@@ -8,3 +8,5 @@ Internal databases = company's own data â€” inventory, customers, transactions â
 First-party = your company collected it. Second-party = another company shares it with you (you pay). Third-party = collected on general public, being phased out due to privacy laws
 
 AppZen version: Invoice data = user input (needs validation) + internal ERP database (clean, structured) + third-party vendor data (payment history, company info)
+
+ON USER DATA: "We retain data according to compliance rules. One of them is SOC 2, it ensures financial data is encrypted, we don't use it without explicit permission, and access is logged and restricted. We follow multiple compliance rules when dealing with financial data."
