@@ -70,7 +70,7 @@ Tree-based models — feature crossing helps them too
 
 Neural networks — less critical but speeds up learning
 
-⚠️ Risks:
+Risks:
 
 Feature space explodes — 100 values × 100 values = 10,000 combinations
 
