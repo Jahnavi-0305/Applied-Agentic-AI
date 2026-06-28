@@ -1,6 +1,6 @@
 # Handling Missing Values 
 
-3 Types of Missing Values:
+3 Types of Missing Values
 
 MNAR (Missing Not At Random) = missing BECAUSE of the value itself → e.g., high earners hide income
 
