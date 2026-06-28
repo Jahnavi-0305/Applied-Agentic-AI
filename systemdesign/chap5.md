@@ -26,7 +26,7 @@ Fill with mean / median / mode
 
 ❌ Risk = never fill with a possible real value (e.g., filling missing "number of children" with 0 — model can't tell zero kids vs missing data)
 
-❌ Risk = can cause data leakage if done wrong
+Risk = can cause data leakage if done wrong
 
 The Golden Rule:
 
@@ -45,7 +45,7 @@ Model crashes or ignores them if it never saw them during training
 Approach	Problem
 Assign each category a number	Crashes on new categories
 "Unknown" bucket for rare ones	Model never learned "unknown" = useless recommendations
-Hashing trick ✅	Fixed hash space handles ANY new category automatically
+Hashing trick Fixed hash space handles ANY new category automatically
 Hashing Trick — How it works:
 
 Hash function converts ANY category name → index number (0 to 262,144)
