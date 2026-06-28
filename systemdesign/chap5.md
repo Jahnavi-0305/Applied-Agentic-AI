@@ -16,7 +16,7 @@ Column deletion = remove the whole column if >50% values missing
 
 Row deletion = remove the sample if MCAR and <0.1% of data
 
-❌ Risk = lose important info, create bias (removing gender A rows = model can't predict gender A)
+Risk = lose important info, create bias (removing gender A rows = model can't predict gender A)
 
 Imputation (fill the gap):
 
