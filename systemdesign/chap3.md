@@ -68,9 +68,9 @@ REST = public APIs between different companies
 
 RPC = internal calls within same organization
 
-❌ Gets complicated with many services — creates tight coupling
+Gets complicated with many services — creates tight coupling
 
-✅ Good for simple request-response patterns
+Good for simple request-response patterns
 
 3. Through Real-Time Transport (Event-Driven)
 
@@ -80,9 +80,9 @@ Instead → publish events to a broker (Kafka)
 
 Other services subscribe to what they need
 
-✅ Decoupled — services don't depend on each other
+Decoupled — services don't depend on each other
 
-✅ Fast — in-memory, not database reads
+Fast — in-memory, not database reads
 
 Scalable — works with hundreds of services
 
