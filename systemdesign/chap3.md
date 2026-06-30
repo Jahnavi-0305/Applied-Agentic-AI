@@ -84,7 +84,7 @@ Other services subscribe to what they need
 
 ✅ Fast — in-memory, not database reads
 
-✅ Scalable — works with hundreds of services
+Scalable — works with hundreds of services
 
 Pub/Sub vs Message Queue:
 
