@@ -56,9 +56,9 @@ Process into structured warehouse (queryable)
 
 Process A writes to DB → Process B reads from DB
 
-❌ Too slow for real-time apps
+Too slow for real-time apps
 
-❌ Both processes must access same DB — not feasible across companies
+Both processes must access same DB — not feasible across companies
 
 2. Through Services (REST/RPC)
 
